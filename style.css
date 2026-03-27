@@ -1,0 +1,309 @@
+/* ===== UMUMIY SOZLAMALAR ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* ===== KIRISH QISMI (LOGIN) ===== */
+.loginlar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 100px;
+    flex-wrap: wrap;
+}
+
+.login-saboy,
+.login-stol {
+    width: 280px;
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.login-saboy:hover,
+.login-stol:hover {
+    transform: translateY(-10px);
+}
+
+.login-saboy img,
+.login-stol img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* Tugmalar dizayni */
+.btn,
+.button,
+.btn-menu,
+.btn-joy {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: #2d3436;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.button {
+    background: #0984e3;
+}
+
+/* Istemol uchun ko'k rang */
+.btn:hover,
+.button:hover {
+    opacity: 0.8;
+}
+
+/* ===== MENU SELECTION ===== */
+.menu-kurish {
+    display: none;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 100px;
+}
+
+.menu-box,
+.joy-box {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== CARDS GRID ===== */
+.shirinliklar-cards,
+.drink-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.card p {
+    margin: 8px 0;
+    font-weight: bold;
+}
+
+.card button {
+    background: #ff7675;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* ===== SAVAT MODALI (YANGI) ===== */
+.cart-modal {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 350px;
+    height: 100vh;
+    background: white;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: 0.4s;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-modal.show {
+    right: 0;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+#cartItems {
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Savat ichidagi har bir mahsulot */
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.cart-info {
+    flex: 1;
+}
+
+/* ===== MODALLAR (STOL VA BUYURTMA) ===== */
+.table-modal,
+.order-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.table-content,
+.order-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    position: relative;
+    width: 350px;
+    text-align: center;
+}
+
+.close-x {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: red;
+    cursor: pointer;
+}
+
+.tables-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.table-item {
+    padding: 15px;
+    border: 2px solid #0984e3;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.table-item:hover {
+    background: #0984e3;
+    color: white;
+}
+
+/* ===== SEARCH VA BACK ===== */
+.search-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#searchInput {
+    padding: 12px;
+    width: 60%;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+#backBtn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #d63031;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.cart-icon {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #2d3436;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#cartCount {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: red;
+    font-size: 12px;
+    padding: 3px 7px;
+    border-radius: 50%;
+}
+
+/* Buyurtma formasi inputlari */
+.order-content input,
+.order-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+
+.shirinlik-bulimi,
+.ichimlik-bulimi,
+.choy-bulimi {
+    padding: 10px;
+    text-align: center;
+}

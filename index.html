@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kafe Order System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="loginlar">
+        <div class="login-saboy">
+            <img src="assets/image.png" alt="Dastavka">
+            <h1 class="login-text">Dastavka uchun</h1>
+            <button class="btn">Enter</button>
+        </div>
+
+        <div class="login-stol">
+            <img src="assets/image copy.png" alt="Iste'mol">
+            <h1 class="login-text">Shu yerda iste'mol</h1>
+            <button class="button">Enter</button>
+        </div>
+    </div>
+
+    <div class="menu-kurish">
+        <div class="menu-box">
+            <button class="btn-menu">Menuni ko'rish</button>
+        </div>
+        <div class="joy-box">
+            <button class="btn-joy">Joy tanlash</button>
+        </div>
+    </div>
+
+    <div id="mainContent" style="display: none;">
+        <button id="backBtn">Orqaga</button>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Mahsulot qidirish...">
+        </div>
+
+        <div class="shirinlik-bulimi">
+            <h3>Shirinliklar</h3>
+            <div class="shirinliklar-cards">
+                <div class="card">
+                    <img src="assets/image copy 2.png">
+                    <p>Olchali perog</p>
+                    <p>45 000 so'm</p>
+                    <button onclick="addToCart('Olchali perog', 45000, 'assets/image copy 2.png')">Savatga
+                        qo‘shish</button>
+                </div>
+                <div class="card">
+                    <img src="assets/image copy 3.png">
+                    <p>Medovik tort</p>
+                    <p>55 000 so'm</p>
+                    <button onclick="addToCart('Medovik tort', 55000, 'assets/image copy 3.png')">Savatga
+                        qo‘shish</button>
+                </div>
+                <div class="card">
+                    <img src="assets/image copy 4.png">
+                    <p>Shokoladli tort</p>
+                    <p>60 000 so'm</p>
+                    <button onclick="addToCart('Shokoladli tort', 60000, 'assets/image copy 4.png')">Savatga
+                        qo‘shish</button>
+                </div>
+                <div class="card">
+                    <img src="assets/image copy 5.png">
+                    <p>Chizkeyk</p>
+                    <p>50 000 so'm</p>
+                    <button onclick="addToCart('Chizkeyk', 50000, 'assets/image copy 5.png')">Savatga qo‘shish</button>
+                </div>
+                <div class="card">
+                    <img src="assets/image copy 6.png">
+                    <p>Eklerlar</p>
+                    <p>35 000 so'm</p>
+                    <button onclick="addToCart('Eklerlar', 35000, 'assets/image copy 6.png')">Savatga qo‘shish</button>
+                </div>
+                <div class="card">
+                    <img src="assets/image copy 7.png">
+                    <p>Tiramisu</p>
+                    <p>65 000 so'm</p>
+                    <button onclick="addToCart('Tiramisu', 65000, 'assets/image copy 7.png')">Savatga qo‘shish</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="ichimlik-bulimi">
+            <h3>Ichimliklar va Choylar</h3>
+            <div class="drink-cards">
+                <div class="card">
+                    <img src="assets/image copy 8.png">
+                    <p>Limonli choy</p>
+                    <p>10 000 so'm</p>
+                    <button onclick="addToCart('Limonli choy', 10000, 'assets/image copy 8.png')">Savatga
+                        qo‘shish</button>
+                </div>
+                <div class="card">
+                    <img src="assets/image copy 9.png">
+                    <p>Ko'k choy</p>
+                    <p>5 000 so'm</p>
+                    <button onclick="addToCart('Ko\'k choy', 5000, 'assets/image copy 9.png')">Savatga qo‘shish</button>
+                </div>
+                <div class="card">
+                    <img src="assets/image copy 10.png">
+                    <p>Qora choy (oddiy)</p>
+                    <p>5 000 so'm</p>
+                    <button onclick="addToCart('Qora choy', 5000, 'assets/image copy 10.png')">Savatga qo‘shish</button>
+                </div>
+                <div class="card">
+                    <img src="assets/image copy 11.png">
+                    <p>Mevali choy</p>
+                    <p>15 000 so'm</p>
+                    <button onclick="addToCart('Mevali choy', 15000, 'assets/image copy 11.png')">Savatga
+                        qo‘shish</button>
+                </div>
+                <div class="card">
+                    <img src="assets/image copy 12.png">
+                    <p>Kofe (Americano)</p>
+                    <p>18 000 so'm</p>
+                    <button onclick="addToCart('Kofe Americano', 18000, 'assets/image copy 12.png')">Savatga
+                        qo‘shish</button>
+                </div>
+                <div class="card">
+                    <img src="assets/image copy 13.png">
+                    <p>Kapuchino</p>
+                    <p>22 000 so'm</p>
+                    <button onclick="addToCart('Kapuchino', 22000, 'assets/image copy 13.png')">Savatga
+                        qo‘shish</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-icon" id="cartBtn" style="display: none;">
+        🛒 <span id="cartCount">0</span>
+    </div>
+
+    <div id="cartModal" class="cart-modal">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <h3>Savat</h3>
+            <button id="closeCart"
+                style="background:red; color:white; border:none; border-radius:50%; width:30px; height:30px; cursor:pointer;">X</button>
+        </div>
+        <div id="cartItems"></div>
+        <hr>
+        <h4>Jami: <span id="totalPrice">0</span> so'm</h4>
+        <button id="saveBtn"
+            style="background:green; color:white; width:100%; padding:12px; border:none; border-radius:10px; cursor:pointer; font-weight:bold; margin-top:10px;">Buyurtma
+            berish</button>
+    </div>
+
+    <div id="tableModal" class="table-modal">
+        <div class="table-content">
+            <button id="closeTableModal"
+                style="position:absolute; top:10px; right:10px; color:red; border:none; background:none; font-size:20px; cursor:pointer;">X</button>
+            <h3>Stol tanlang</h3>
+            <div class="tables-grid">
+                <div class="table-item" onclick="selectTable(1)">1</div>
+                <div class="table-item" onclick="selectTable(2)">2</div>
+                <div class="table-item" onclick="selectTable(3)">3</div>
+                <div class="table-item" onclick="selectTable(4)">4</div>
+                <div class="table-item" onclick="selectTable(5)">5</div>
+                <div class="table-item" onclick="selectTable(6)">6</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="orderModal" class="order-modal">
+        <div class="order-content">
+            <h3>Buyurtmani tasdiqlash</h3>
+            <input type="text" id="userName" placeholder="Ismingiz">
+            <input type="tel" id="userPhone" value="+998" maxlength="13">
+            <textarea id="userAddress" placeholder="Manzil yoki izoh"></textarea>
+            <div style="display:flex; gap:10px; margin-top:10px;">
+                <button id="confirmOrder"
+                    style="background:green; color:white; flex:1; padding:10px; border:none; border-radius:5px;">Tasdiqlash</button>
+                <button id="cancelOrder"
+                    style="background:grey; color:white; flex:1; padding:10px; border:none; border-radius:5px;">Bekor
+                    qilish</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+
+</html>
